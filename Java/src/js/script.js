@@ -1,6 +1,8 @@
 let money,
     name,
-    time
+    time,
+    price,
+    yourName
 
 
 function start() {
@@ -12,14 +14,17 @@ function start() {
 
         name = prompt("Название вашего магазина?").toUpperCase();
         time = 21;
+        price = 100
 }
-//start();
+start();
 
 const mainList = {
     budget: money,
     shopName: name,
     open: false,
     shopGoods: [],
+    employers: [],
+    discount: false
  
 }
 
@@ -71,6 +76,32 @@ function chooseGoods() {
 
 ///console.log(shopGoods);
 
+function ourEmployers() {
+    for (let i = 0; i < 4; i++) {
+   
+       let c = prompt("What is your name?");
+       
+       if (typeof(c) === 'string' && c != '' && c.length < 50 ) {
+           console.log('Cool name');
+           mainList.employers[i] = c;
+       } else {
+           console.log(i);
+           i--;
+          }
+   }
+}     
+
+ourEmployers();
+
+function withDiscount(){
+    if(discount === true) {
+        return (80 * price) / 100;
+    }
+    return price;
+}
+
+price = withDiscount(price);
+
 
 function workTime(time) { 
     if(time < 0 ) {
@@ -85,7 +116,19 @@ function workTime(time) {
 }
 workTime(19);
 
-alert(mainList.budget / 30);
+//let a = mainList.budget;
+//let b = 30;
+
+function showBudget(a, b) {
+    const value = a/b;
+    alert(value);
+    return value,
+    
+}
+
+console.log(showBudget (mainList.budget, 30));
+//alert(mainList.budget / 30);
+//alert();
 
 console.log(mainList);
 
