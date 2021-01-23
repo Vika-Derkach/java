@@ -22,21 +22,38 @@ const mainList = {
 //     age: 47
     
 // }
-
+// 0 undefined null false !!(undefined)
+// !undefined === !null 
 // console.log(employers);
+//&& i / || or 
+//(1===2 && 1===1 ) === false
+//(true && 0 ) === false
+//(1 && 2 ) === 2
+//(0 && 2 ) === 0
+//(true && false ) === false
+//!true === false
+//!!true === false
+//(1===2 || 1===1 ) === true
+//(1 || 0 ) === 1
+//(null || undefined && 0 ) === 1
+//(0 || undefined || 0 ) === 1
+//(1 && 2 ) === 2
+//(0 && 2 ) === 0
 
-
-for (let i = 0; i < 5; i++){
+for (let i = 0; i < 5; i++) {
 
     let a = prompt("Какой тип товаров будем продавать?");
     
-    if ((typeof(a)) === 'string'  && (typeof(a)) === null && a != '' && a.length < 50 ) {
+    if (typeof(a) === 'string' && a != '' && a.length < 50 ) {
         console.log('Everthing is okay');
         mainList.shopGoods[i] = a;
     } else {
-
-    }
+        console.log(i);
+        i--;
+       }
 }
+
+///console.log(shopGoods);
 
 if(time < 0 ) {
     console.log('it cannot be possible');
