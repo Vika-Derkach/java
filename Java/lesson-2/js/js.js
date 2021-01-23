@@ -33,10 +33,10 @@ switch (num) {
         break; 
 }
 
-//while (num < 55) {
-    //console.log(num);
-    //num++;
-//}
+// while (num < 55) {
+//     console.log(num);
+//     num++;
+// }
 
 //do {
   //  console.log(num);
@@ -44,7 +44,32 @@ switch (num) {
 //}
 //while (num <55);
 
-for (let i = 0; i < 8; i++) {
-    console.log(i);
+
+
+//HW
+
+// for (let i = 0; i < 8; i++) {
+//     console.log(i);
+// }
+
+ let i = 0;
+
+// while ( i < 8) {
+//     console.log(i);
+//     i++;
+// }
+
+do {
+   console.log(i);
+   i++;
 }
+while (i < 8);
+
+
+//added tast
+// let x = 5; 
+// alert( x++ ); 
+
+
+let y = 1; let x = y = 2; alert(x); 
 
