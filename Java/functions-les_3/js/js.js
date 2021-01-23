@@ -48,14 +48,42 @@
 
 
 // заокруглення
-let str = "12.2px"
+// let str = "12.2px"
 
 // console.log(Math.round(str));
 
 //заберает строку 
 //не читает точек
-console.log(parseInt(str));
+//console.log(parseInt(str));
 //читает точки
-console.log(parseFloat(str));
+//console.log(parseFloat(str));
 
 
+
+// function first(){
+//     setTimeout( function(){
+//       console.log(1);
+//     });
+// }
+// function second(){
+//     console.log(2);
+// }
+// first();
+// second();
+
+
+function learnJS(lang, callback){
+    console.log('I learn ' + lang);
+    callback();
+}
+
+//learnJS('JavaScript', function(){
+  // console.log('i have done the third lesson')
+//});
+
+
+learnJS('JavaScript', done);
+
+function done() {
+    console.log('i have done the third lesson')
+}
