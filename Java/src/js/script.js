@@ -1,36 +1,57 @@
-var answer = +prompt("Ваш бюджет?");
-var answer = +prompt("Название вашего магазина?");
+const money = prompt("Ваш бюджет?");
+const name = prompt("Название вашего магазина?");
+const time = 19;
 
-var mainList = {
-    budget: 100000,
-    shopName: "Merryland",
-    open: true
-    
+const mainList = {
+    budget: money,
+    shopName: name,
+    open: false,
+    shopGoods: [],
+ 
 }
+
+
+
+
+// const employers = {
+//     name: "Kata",
+//     age: 91,
+//     name: "Fina",
+//     age: 35,
+//     name: "George",
+//     age: 47
+    
+// }
+
+// console.log(employers);
+
+
+for (let i = 0; i < 5; i++){
+
+    let a = prompt("Какой тип товаров будем продавать?");
+    
+    if ((typeof(a)) === 'string'  && (typeof(a)) === null && a != '' && a.length < 50 ) {
+        console.log('Everthing is okay');
+        mainList.shopGoods[i] = a;
+    } else {
+
+    }
+}
+
+if(time < 0 ) {
+    console.log('it cannot be possible');
+} else if (time > 8 && time < 20) {
+    console.log('time to work')
+    } else if(time < 24) {
+        console.log('it is too late');
+        } else {
+            console.log('there are only 24 hours in day');
+        }
+
+alert(mainList.budget / 30);
 
 console.log(mainList);
 
-
-var employers = {
-    name: "Kata",
-    age: 91,
-    name: "Fina",
-    age: 35,
-    name: "George",
-    age: 47
-    
-}
-
-console.log(employers);
-
-var  shopGoods = ['shoes', 'shirts', 'sweaters', 'trousers'];
-alert (shopGoods [1]);
-
-var typeShopOne = prompt("Какой тип товаров будем продавать?" , "shoes");
-var typeShopTwo = prompt("Какой тип товаров будем продавать?" , " shirts");
-var typeShopThree = prompt("Какой тип товаров будем продавать?" , " sweaters");
-alert("100hr per day");
-
-var number = 33721;
+let number = 33721;
 console.log(3*3*7*2*1);
 console.log(126 ** 3);
