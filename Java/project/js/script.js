@@ -24,14 +24,15 @@ let money,
     discount
 
 open.addEventListener('click', () => {
-    money = prompt("Ваш бюджет?", "");
+    let timer = setTimeout(start, 2000);
+    // money = prompt("Ваш бюджет?", "");
         
-    while (isNaN(money) || money == "" || money == null) {
-        money = prompt("Ваш бюджет?", "");  
-    }
-    budget_value.textContent = money;
+    // while (isNaN(money) || money == "" || money == null) {
+    //     money = prompt("Ваш бюджет?", "");  
+    // }
+    // budget_value.textContent = money;
 
-    name_value.textContent = prompt("Название вашего магазина?", '').toUpperCase();
+    // name_value.textContent = prompt("Название вашего магазина?", '').toUpperCase();
     //time = 21;
     //price = 100
     
@@ -79,6 +80,17 @@ open.addEventListener('click', () => {
 
 
 });
+
+function start() {
+    money = prompt("Ваш бюджет?", "");
+        
+    while (isNaN(money) || money == "" || money == null) {
+        money = prompt("Ваш бюджет?", "");  
+    }
+    budget_value.textContent = money;
+
+    name_value.textContent = prompt("Название вашего магазина?", '').toUpperCase();
+}
 
 goods_btn.addEventListener('click', () => {
     for (let i = 0; i < goods_item.length; i++) {
