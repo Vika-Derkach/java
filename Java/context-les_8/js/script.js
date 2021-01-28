@@ -85,7 +85,7 @@
 // console.log(double(3));
 // console.log(double(10));
 
-
+// міняємо колір через стиль і this
 // let btn = document.getElementsByTagName('button')[0];
 
 // btn.addEventListener('click', function() {
@@ -93,6 +93,8 @@
 //     //console.log(this)
 // });
 
+
+//
 let btn = document.getElementsByTagName('button')[0];
 
 btn.addEventListener('click', ()=> {
