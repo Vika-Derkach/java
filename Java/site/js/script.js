@@ -37,21 +37,35 @@ window.addEventListener('DOMContentLoaded', function(){
 
     //Timer
     let deadline = '2021-01-29';
+    
+    function toZero(time) {
+        if (time < 0 ) {
+            return "00"
+        } if (time < 10) {
+            return "0" + time;
+        } 
+         return time
+    }
 
     function getTimeRemaining(endtime) {
         let t = Date.parse(endtime) - Date.parse(new Date()),
-        seconds = Math.floor ( (t/1000) % 60),
+        seconds = Math.floor ( (t/1000) % 60 ) ,
         minutes = Math.floor ((t/1000/60) % 60),
         hours = Math.floor ((t/(1000*60*60)));
-
-
+       
+       
+     
+       seconds = toZero(seconds);
+       minutes = toZero(minutes);
+       hours = toZero(hours);
+      
         return {
             'total': t,
             'hours': hours,
             'minutes': minutes,
             'seconds': seconds
         };
-       // if 
+       
     };
 
     function setClock(id, endtime) {
@@ -100,5 +114,23 @@ window.addEventListener('DOMContentLoaded', function(){
      }
 
 
+    //Modal
+
+    let more = document.querySelector('.more'),
+        overlay = document.querySelector('.overlay'),
+        close = document.querySelector('.popup-close');
+
+    more.addEventListener('click', function() {
+        this.classList.add('more-splash');
+        overlay.style.display = "block";
+        document.body.style.overflow = 'hidden';
+
+    });
+
+    close.addEventListener('click', function() {
+        overlay.style.display = "none";
+        more.classList.remove('more-splash');
+        document.body.style.overflow = '';
+    });
 
 });
