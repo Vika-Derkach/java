@@ -5,16 +5,21 @@ window.addEventListener('DOMContentLoaded', function(){
         tabContent = document.getElementsByClassName('info-tabcontent'),
         info = document.getElementsByClassName('info-header')[0];
 
-    function hideTabContent(a) {
+    const hideTabContent = (a) => {
         for (let i = a; i < tabContent.length; i++ ) {
             tabContent[i].classList.remove('show');
             tabContent[i].classList.add('hide');
         }
+        // for (let i of tabContent) {
+        //     console.log();
+        //     tabContent[i].classList.remove('show');
+        //     tabContent[i].classList.add('hide');
+        // }
     }
 
     hideTabContent(1)
     
-    function showTabContent(b) {
+    const showTabContent = (b) => {
         if( tabContent[b].classList.contains('hide')){
             hideTabContent(0);
             tabContent[b].classList.remove('hide');
@@ -42,7 +47,7 @@ window.addEventListener('DOMContentLoaded', function(){
         if (time < 0 ) {
             return "00"
         } if (time < 10) {
-            return "0" + time;
+            return `0 ${time}`;
         } 
          return time
     }
@@ -167,25 +172,25 @@ window.addEventListener('DOMContentLoaded', function(){
 
 
     //animation 
-    let splash = document.querySelector(".splash");
+    // let splash = document.querySelector(".splash");
 
-    function myAnimation() {
-        let elem = document.querySelector(".more"),
-            pos = 0,
-            id = setInterval(frame, 10);
+    // function myAnimation() {
+    //     let elem = document.querySelector(".more"),
+    //         pos = 0,
+    //         id = setInterval(frame, 10);
     
-            function frame() {
-                if (pos == 300) {
-                    clearInterval(id);
-                } else {
-                    pos++;
-                    elem.style.top = pos + 'px';
-                    elem.style.left = pos + 'px';
-                }
-            }
-    }
+    //         function frame() {
+    //             if (pos == 300) {
+    //                 clearInterval(id);
+    //             } else {
+    //                 pos++;
+    //                 elem.style.top = pos + 'px';
+    //                 elem.style.left = pos + 'px';
+    //             }
+    //         }
+    // }
     
-    splash.addEventListener('click', myAnimation);
+    // splash.addEventListener('click', myAnimation);
 
 
 
