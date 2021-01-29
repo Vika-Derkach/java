@@ -166,6 +166,28 @@ window.addEventListener('DOMContentLoaded', function(){
     });
 
 
+    //animation 
+    let splash = document.querySelector(".splash");
+
+    function myAnimation() {
+        let elem = document.querySelector(".more"),
+            pos = 0,
+            id = setInterval(frame, 10);
+    
+            function frame() {
+                if (pos == 300) {
+                    clearInterval(id);
+                } else {
+                    pos++;
+                    elem.style.top = pos + 'px';
+                    elem.style.left = pos + 'px';
+                }
+            }
+    }
+    
+    splash.addEventListener('click', myAnimation);
+
+
 
     
 
