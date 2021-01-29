@@ -95,9 +95,30 @@
 
 
 //
-let btn = document.getElementsByTagName('button')[0];
+// let btn = document.getElementsByTagName('button')[0];
 
-btn.addEventListener('click', ()=> {
-    //this.style.backgroundColor = 'red'
-    console.log(this)
-});
+// btn.addEventListener('click', ()=> {
+//     //this.style.backgroundColor = 'red'
+//     console.log(this)
+// });
+
+
+
+
+  let age = document.getElementById('age');
+      surname = "Homenko",
+      name = "Ivan",
+      value = 30;
+    function showUser(surname, name) {
+        console.log(this);
+        function showText() {
+            console.log(this);
+            alert("Пользователь " + this.surname + " " + this.name + ", его возраст " +
+      this.value);
+            //return
+        }
+        console.log(showText());
+    }
+
+  showUser();
+
