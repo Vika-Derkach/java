@@ -348,6 +348,10 @@ window.addEventListener('DOMContentLoaded', function(){
         next = document.querySelector('.next'),
         dotsWrap = document.querySelector('.slider-dots'),
         dots = document.getElementsByClassName('dot');
+        sliderList = document.querySelector('.wrap'),
+        slideWidth = 300,
+        pos = 0;
+
     
     showSlides(slideIndex);
 
@@ -388,11 +392,78 @@ window.addEventListener('DOMContentLoaded', function(){
 
     prev.addEventListener('click', function(){
         plusSlides(-1);
+        // slides.style.left = -(slideWidth * pos) + 'px';
+        // slides.style.transition = 'left 0.6s ease-in-out';
     });
+
+    prev.onclick = scrollToPrev;
+    function scrollToPrev() {
+        pos--;
+      
+        if (pos < 0) {
+          var children = sliderList.children;
+      
+          sliderList.style.transition = null;
+          sliderList.style.left = -(pos + 2) * slideWidth + 'px';
+          sliderList.insertBefore(children[slides.length - 1], children[0]);
+          pos++;
+         }
+        requestAnimationFrame(function(){ //ожидаем следующего запланированного reflow/repain;
+          requestAnimationFrame(function(){ 
+            //предыдущий reflow рассчитал новый dom элемент
+            //можно делать анимацию.
+            sliderList.style.transition = 'left 0.6s linear';
+            sliderList.style.left = -(slideWidth * pos) + 'px';
+          })
+        });
+      }
 
     next.addEventListener('click', function(){
         plusSlides(1);
     });
+   
+    // next.onclick = scrollToNext;
+    // function scrollToNext() {
+    //     pos++;
+      
+    //     if (pos > slides.length -1) {
+    //       var children = sliderList.children;
+      
+    //       sliderList.style.transition = null;
+    //       sliderList.style.right = -(pos - 2) * slideWidth + 'px';
+    //       sliderList.insertBefore(children[slides.length - 1], children[0]);
+    //       pos++;
+    //      }
+    //     requestAnimationFrame(function(){ //ожидаем следующего запланированного reflow/repain;
+    //       requestAnimationFrame(function(){ 
+    //         //предыдущий reflow рассчитал новый dom элемент
+    //         //можно делать анимацию.
+    //         sliderList.style.transition = ' right 0.6s linear';
+    //         sliderList.style.right = (slideWidth * pos) + 'px';
+    //       })
+    //     });
+    //   }
+
+    
+      
+    //     // if (pos > slides.length -1) {
+    //       var children = sliderList.children;
+      
+    //       sliderList.style.transition = null;
+    //       sliderList.style.right = (pos - 2) * slideWidth + 'px';
+    //       sliderList.insertBefore(children[slides.length - 1], children[0]);
+    //       pos++;
+    //      }
+    //     requestAnimationFrame(function(){ //ожидаем следующего запланированного reflow/repain;
+    //       requestAnimationFrame(function(){ 
+    //         //предыдущий reflow рассчитал новый dom элемент
+    //         //можно делать анимацию.
+    //         sliderList.style.transition = 'right 0.6s ease-in-out';
+    //         sliderList.style.right = (slideWidth * pos) + 'px';
+    //       })
+    //     });
+    //   }
+
 
     dotsWrap.addEventListener('click', function(event) {
         for (let i = 0; i < dots.length + 1; i++) {
@@ -401,15 +472,30 @@ window.addEventListener('DOMContentLoaded', function(){
             }
         }
     });
-   
 
+   //slider animation
+//    document.querySelectorAll(".slider-item").animate(
+       
+//         // keyframes
+//         { transform: 'translate3D(0, 0, 0)' },
+//         { transform: 'translate3D(0, -300px, 0)' }, {
+//         // timing options
+//         duration: 1000,
+//         iterations: Infinity
+//       }
+//     );
+     
+
+
+
+   //calculate
     let persons = document.getElementsByClassName('counter-block-input')[0],
         restDays = document.getElementsByClassName('counter-block-input')[1],
         place = document.getElementById('select'),
         totalValue = document.getElementById('total'),
         personsSum = 0,
         daysSum = 0,
-        tatal = 0;
+        total = 0;
 
         totalValue.innerHTML = 0;
 
@@ -446,7 +532,6 @@ window.addEventListener('DOMContentLoaded', function(){
 
         });
 
-
-
+      
 
 });
