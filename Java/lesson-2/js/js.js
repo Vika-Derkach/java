@@ -73,3 +73,14 @@ while (i < 8);
 
 let y = 1; let x = y = 2; alert(x); 
 
+
+//знайти суму додатих чисел до вказаного
+function numSum(n){
+    var sum = 0;
+      for(i = 0; i <= n; i++){
+        sum += i; 
+         }
+    console.log(sum)
+         }
+numSum(5);
+
