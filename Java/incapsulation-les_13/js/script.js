@@ -73,15 +73,26 @@
 
 
 //practice
-function myModule() {
-    this.hello = function() {
-        return console.log('hello!');
+// function myModule() {
+//     this.hello = function() {
+//         return console.log('hello!');
 
-    }
+//     }
 
-    this.goodbye = function() {
-        return console.log('goodbye!');
-    }
+//     this.goodbye = function() {
+//         return console.log('goodbye!');
+//     }
+// }
+
+// myModule.exports = myModule;
+
+
+//export по новому стандарту
+export let one = 1;
+let two = 2;
+
+export {two};
+
+export function cons() {
+    console.log(1)
 }
-
-myModule.exports = myModule;
